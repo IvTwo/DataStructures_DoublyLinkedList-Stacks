@@ -4,16 +4,17 @@
     {
         static void Main(string[] args)
         {
-            
+            MyMenu();
         }
 
         // accept user input as a string
-        public void userInput()
+        public static void MyMenu()
         {
             bool keepGoing = true;
             
             while (keepGoing)
             {
+                Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine("Welcome Bracket Balance Checker----!");
                 Console.WriteLine();
@@ -30,7 +31,7 @@
                         break;
 
                     default:
-                        Console.WriteLine();
+                        Console.WriteLine("---");
                         Console.WriteLine("Invalid Input!");
                         break;
                 }
@@ -51,17 +52,49 @@
             Console.WriteLine("Input your string");
             string uInput = UserInput();
 
+            Stack stack = new Stack();  // create a stack object
+
             // check the string character by character
             for(int i = 0; i < uInput.Length; i++)
             {
-                if (uInput[i].Equals("{"))
+                if (uInput[i].Equals('{'))
                 {
-                    // push
+                    stack.push("{");
                 }
-                else if (uInput[i].Equals("}"))
+                else if (uInput[i].Equals('}'))
                 {
-                    //pop
+                    bool didPop = stack.pop();
+
+                    // brackets are unbalanced, too many }
+                    if (!didPop)
+                    {
+                        Console.WriteLine("---");
+                        Console.WriteLine("Brackets are Unbalanced!");
+
+                        int pos1 = i - 5;   // start of substring
+                        while (pos1 < 0)    
+                        {
+                            pos1++;
+                        }
+
+                        int pos2 = 11;
+                        while (pos2 + pos1 > uInput.Length)    // end of substring
+                        {
+                            pos2--;
+                        }
+
+                        Console.WriteLine("The first imbalanced bracket is at: " + "-" + uInput.Substring(pos1, pos2) + "-");
+                    }
                 }
+            }
+
+            if (stack.isEmpty())
+            {
+                Console.WriteLine("{ The brackets are Balanced :) }");
+            }
+            else    // brackets are unbalanced, too many {
+            {
+                
             }
         }
     }

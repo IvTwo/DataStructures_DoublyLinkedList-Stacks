@@ -41,8 +41,38 @@ namespace Stack_a2a
             // update "top"
             top = temp;
         }
+        
+        public bool pop()
+        {
+            // if the stack is empty
+            if (top == null)
+            {
+                Console.WriteLine("Stack Underflow");
+                return false;
+            }
 
-        // public void pop
-        // public void peek
+            // update the top to the node underneath
+            top = top.link;
+            return true;
+        }
+
+        public bool isEmpty()
+        {
+            return top == null;
+        }
+
+        // we don't actually need this method
+        //public string peek()
+        //{
+        //    if (!isEmpty())
+        //    {
+        //        return top.data;
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("Stack is empty");
+        //        return "";
+        //    }
+        //}
     }
 }
