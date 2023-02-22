@@ -12,12 +12,12 @@ using System.Threading.Tasks;
 
 namespace Stack_a2a
 {
-    public class Stack
+    public class MyStack
     {
         // nested class
         private class Node
         {
-            public string data;
+            public int data;
             public Node link;   // reference variable to next node
         }
 
@@ -25,12 +25,12 @@ namespace Stack_a2a
         private Node top;
 
         // constructor
-        public Stack()
+        public MyStack()
         {
             this.top = null;
         }
 
-        public void push(string s)
+        public void push(int s)
         {
             Node temp = new Node(); // create new node
 
@@ -61,18 +61,17 @@ namespace Stack_a2a
             return top == null;
         }
 
-        // we don't actually need this method
-        //public string peek()
-        //{
-        //    if (!isEmpty())
-        //    {
-        //        return top.data;
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine("Stack is empty");
-        //        return "";
-        //    }
-        //}
+        public int peek()
+        {
+            if (!isEmpty())
+            {
+                return top.data;
+            }
+            else
+            {
+                Console.WriteLine("Stack is empty");
+                return -1;
+            }
+        }
     }
 }

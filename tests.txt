@@ -8,6 +8,13 @@ hello{he{ll{o}oo
 
 pppos{ooo}oo
 
-{ { }  { { } { { }
+{ { } { { } { { }
+1 2 3 4 5 6 7 8 9
 
-push push push
+1 4 7
+
+push1 push3 push5
+
+The Quick {Brown} {Fox {Jumps} {Over {The} Lazy Dog.}}}
+
+The Quick Brown Fox Jumps Over The Lazy Dog.
