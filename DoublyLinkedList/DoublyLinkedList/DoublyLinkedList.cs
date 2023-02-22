@@ -1,6 +1,17 @@
-﻿// CMIS 2720
-// Assignment 2a
-// Implement the missing methods as indicated below.
+﻿/******************************************************************
+ * CMIS 2720
+ * Assignment 2a
+ * Implement the missing methods as indicated below.
+ * 
+ * Time Complexity for each method:
+ *      AddFirst()      = O(1)
+ *      AddLast()       = O(1)
+ *      Find()          = O(n)
+ *      FindLast()      = O(n)
+ *      RemoveFirst()   = O(1)
+ *      RemoveLast()    = O(1)
+ *      Clear()         = O(n)
+ *****************************************************************/
 
 namespace DoublyLinkedList
 {
@@ -45,6 +56,7 @@ namespace DoublyLinkedList
             Count = 0;
         }
 
+        // O(1)
         public void AddLast(T data)
         {
             // Consider two cases: The list is empty or not empty. 
@@ -69,6 +81,7 @@ namespace DoublyLinkedList
             Count++;
         }
 
+        // O(1)
         public void AddFirst(T data)
         {
             // Consider two cases: The list is empty or not empty. 
@@ -91,6 +104,7 @@ namespace DoublyLinkedList
             Count++;
         }
 
+        // O(1)
         public void RemoveFirst()
         {
             // Consider three cases: empty, one node, more than one node
@@ -118,6 +132,7 @@ namespace DoublyLinkedList
             }
         }
 
+        // O(1)
         public void RemoveLast()
         {
             // Consider three cases: empty, one node, more than one node
@@ -145,6 +160,7 @@ namespace DoublyLinkedList
             }
         }
 
+        // O(n)
         public DoublyLinkedListNode<T>? Find(T data)
         {
             DoublyLinkedListNode<T> current = _head;
@@ -165,6 +181,7 @@ namespace DoublyLinkedList
             return null;
         }
 
+        // O(n)
         public DoublyLinkedListNode<T> AddAfter(DoublyLinkedListNode<T> node, T data)
         {
             if (node == null)
@@ -218,6 +235,7 @@ namespace DoublyLinkedList
             return null;
         }
 
+        // O(n) --> because of the Find()
         public bool Remove(T data)
         {
             DoublyLinkedListNode<T> node = Find(data);
@@ -262,6 +280,7 @@ namespace DoublyLinkedList
 
         }
 
+        // O(n)
         public void PrintAllNodes()
         {
             Console.Write("Head -> ");
@@ -277,6 +296,7 @@ namespace DoublyLinkedList
 
         }
 
+        // O(n)
         // To-do: Implement AddBefore()
         public DoublyLinkedListNode<T> AddBefore(DoublyLinkedListNode<T> node, T data)
         {
@@ -324,6 +344,7 @@ namespace DoublyLinkedList
             return null;
         }
 
+        // O(n)
         // To-do: Implement FindLast()
         // find the last instance of "data" 
         public DoublyLinkedListNode<T>? FindLast(T data) 
@@ -343,6 +364,7 @@ namespace DoublyLinkedList
             return temp;
         }
 
+        // O(n)
         // To-do: Implement Clear()
         // Removes all nodes from the
         public void Clear() 
