@@ -30,6 +30,7 @@ namespace Stack_a2a
             this.top = null;
         }
 
+        // O(1)
         public void push(int s)
         {
             Node temp = new Node(); // create new node
@@ -42,6 +43,7 @@ namespace Stack_a2a
             top = temp;
         }
         
+        // O(1)
         public bool pop()
         {
             // if the stack is empty
@@ -56,11 +58,13 @@ namespace Stack_a2a
             return true;
         }
 
+        // O(1)
         public bool isEmpty()
         {
             return top == null;
         }
 
+        // O(1)
         public int peek()
         {
             if (!isEmpty())
