@@ -376,6 +376,18 @@ namespace DoublyLinkedList
                 current = current.Next;
             }
         }
+        /***************************************************
+         * INSTRUCTOR FEEDBACK:
+         * A slightly simpler solution to Clear() is this.
+         * 
+         * public void Clear()
+         * {
+         *      while (Count > 0)
+         *      {
+         *          RemoveLast();
+         *      }
+         * }
+         ***************************************************/
     }
     class DoublyLinkedListTest
     {
